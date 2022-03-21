@@ -1632,8 +1632,8 @@
             "parentId": "page",
             "childIndex": 17,
             "point": [
-              680.95,
-              209.74
+              679.78,
+              154.61
             ],
             "rotation": 0,
             "bend": 0,
@@ -1642,7 +1642,7 @@
                 "id": "start",
                 "index": 0,
                 "point": [
-                  249.44,
+                  193.81,
                   0
                 ],
                 "canBind": true,
@@ -1653,7 +1653,7 @@
                 "index": 1,
                 "point": [
                   0,
-                  51.4
+                  104.97
                 ],
                 "canBind": true,
                 "bindingId": "d812ac3d-570c-4da3-304a-7cb0b60a563d"
@@ -1662,8 +1662,8 @@
                 "id": "bend",
                 "index": 2,
                 "point": [
-                  124.72,
-                  25.7
+                  96.91,
+                  52.49
                 ]
               }
             },
@@ -1690,8 +1690,8 @@
             "parentId": "page",
             "childIndex": 18,
             "point": [
-              930.39,
-              183.63
+              873.59,
+              116.93
             ],
             "rotation": 0,
             "text": "clicker",
@@ -1712,33 +1712,11 @@
             "parentId": "page",
             "childIndex": 19,
             "point": [
-              310.17,
+              240.67000000000002,
               648.12
             ],
             "rotation": 0,
-            "text": "Clicks give ghosts\nGhosts give spooky energy\nUpgrades can be bought with spooky energy\n \nUpgrade ideas: \n-background ghost gathering\n-ghosts being worth more spooky energy",
-            "style": {
-              "color": "black",
-              "size": "small",
-              "isFilled": false,
-              "dash": "draw",
-              "scale": 1,
-              "font": "script",
-              "textAlign": "middle"
-            }
-          },
-          "30d95ff7-c4c7-4d5b-12e1-62ad67c091a5": {
-            "id": "30d95ff7-c4c7-4d5b-12e1-62ad67c091a5",
-            "type": "text",
-            "name": "Text",
-            "parentId": "page",
-            "childIndex": 20,
-            "point": [
-              737.47,
-              656.54
-            ],
-            "rotation": 0,
-            "text": "Big question: how do i do this without state?",
+            "text": "Clicks give ghosts\nGhosts give spooky energy\nUpgrades can be bought with spooky energy\n \nUpgrade ideas: \n-background ghost gathering (gravestones? grim reapers?)\n-ghosts being worth more spooky energy\n-spooky skeletons: gives spooky energy over time",
             "style": {
               "color": "black",
               "size": "small",
@@ -1756,14 +1734,458 @@
             "parentId": "page",
             "childIndex": 21,
             "point": [
-              772.38,
-              729.99
+              809.79,
+              653.39
             ],
             "rotation": 0,
             "text": "More flavour once I'm further in!",
             "style": {
               "color": "black",
               "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "193872e5-c333-42a0-342c-e92d3dadadbe": {
+            "id": "193872e5-c333-42a0-342c-e92d3dadadbe",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 22,
+            "point": [
+              1188.38,
+              150.89
+            ],
+            "rotation": 0,
+            "text": "App",
+            "style": {
+              "color": "cyan",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "54c00fe1-d975-46f6-1bf0-74099ad903bd": {
+            "id": "54c00fe1-d975-46f6-1bf0-74099ad903bd",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 23,
+            "point": [
+              1013.45,
+              280.54
+            ],
+            "rotation": 0,
+            "text": "Header",
+            "style": {
+              "color": "blue",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "7b1f15c4-1e66-4c76-11ad-1cdf595ada47": {
+            "id": "7b1f15c4-1e66-4c76-11ad-1cdf595ada47",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 24,
+            "point": [
+              1275.71,
+              292.55
+            ],
+            "rotation": 0,
+            "text": "ClickerGame",
+            "style": {
+              "color": "blue",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "90d983f2-9ddb-4452-3f28-10ad06503cb5": {
+            "id": "90d983f2-9ddb-4452-3f28-10ad06503cb5",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 25,
+            "point": [
+              1024.71,
+              494.68
+            ],
+            "rotation": 0,
+            "text": "ClickerButton",
+            "style": {
+              "color": "indigo",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "5506798b-8566-4d3e-1fd7-55c9ff0159d1": {
+            "id": "5506798b-8566-4d3e-1fd7-55c9ff0159d1",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 26,
+            "point": [
+              1320.19,
+              496.34
+            ],
+            "rotation": 0,
+            "text": "ResourceCounters",
+            "style": {
+              "color": "indigo",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "09e8d309-994d-420b-3b14-87cb222c42a2": {
+            "id": "09e8d309-994d-420b-3b14-87cb222c42a2",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 27,
+            "point": [
+              1429.47,
+              182.64
+            ],
+            "rotation": 0,
+            "text": "Resource States held here:\nGhosts\nSpooky Energy\nSkeletons + Other Upgrades",
+            "style": {
+              "color": "red",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "29cdb94b-aaa2-4981-3dfe-bedfc9cc1b52": {
+            "id": "29cdb94b-aaa2-4981-3dfe-bedfc9cc1b52",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 28,
+            "point": [
+              1128.66,
+              208.89
+            ],
+            "rotation": 0,
+            "bend": 0,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  65.07,
+                  0
+                ],
+                "canBind": true,
+                "bindingId": "c7d9413b-2e99-4c54-2416-1daf3fdb64cd"
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  0,
+                  63.65
+                ],
+                "canBind": true,
+                "bindingId": "f440ee7a-21f2-4cff-00dd-184371ae2f83"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  32.53,
+                  31.83
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "cyan",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "000ef5d1-d076-458d-2f10-bd4e6c6abb9b": {
+            "id": "000ef5d1-d076-458d-2f10-bd4e6c6abb9b",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 29,
+            "point": [
+              1246.5,
+              208.89
+            ],
+            "rotation": 0,
+            "bend": 0,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true,
+                "bindingId": "7757bc51-935b-4022-0b4d-90cc3694176f"
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  60.34,
+                  75.66
+                ],
+                "canBind": true,
+                "bindingId": "33e095d0-1a3b-45ab-1248-ab9d1c22c334"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  30.17,
+                  37.83
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "cyan",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "923e562f-338b-4fd4-197e-e1c300bd2848": {
+            "id": "923e562f-338b-4fd4-197e-e1c300bd2848",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 30,
+            "point": [
+              1193.93,
+              350.55
+            ],
+            "rotation": 0,
+            "bend": 0.00005437617445812915,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  150.68,
+                  0
+                ],
+                "canBind": true,
+                "bindingId": "21ba89e1-253c-4f6e-3987-341952bfb401"
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  0,
+                  136.13
+                ],
+                "canBind": true,
+                "bindingId": "41234a2e-9d85-4c92-2caf-f441a2888430"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  75.34,
+                  68.07
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "blue",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "30cab279-09bf-43b5-06ea-2b482145c51a": {
+            "id": "30cab279-09bf-43b5-06ea-2b482145c51a",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 31,
+            "point": [
+              1384.36,
+              350.55
+            ],
+            "rotation": 0,
+            "bend": -0.00005842536603166999,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true,
+                "bindingId": "3ba54613-ee15-4294-1622-501af81aca91"
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  36.34,
+                  137.79
+                ],
+                "canBind": true,
+                "bindingId": "2b926100-7150-45b4-215e-46d21d565287"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  18.17,
+                  68.9
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "blue",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "4ccb6fbf-a65d-4689-0992-4c5e0b5ad2ae": {
+            "id": "4ccb6fbf-a65d-4689-0992-4c5e0b5ad2ae",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 32,
+            "point": [
+              1439.25,
+              350.55
+            ],
+            "rotation": 0,
+            "bend": -0.0000186037377668324,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true,
+                "bindingId": "ed13001b-d8b4-458d-3400-6e6aa8a1b840"
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  301.3,
+                  139.71
+                ],
+                "canBind": true,
+                "bindingId": "de35b3e2-021d-486f-1869-a15877c5dc7f"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  150.65,
+                  69.86
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "blue",
+              "size": "medium",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "4e92b039-77c8-4dc0-33e8-2e49b9792049": {
+            "id": "4e92b039-77c8-4dc0-33e8-2e49b9792049",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 33,
+            "point": [
+              1668.07,
+              498.26
+            ],
+            "rotation": 0,
+            "text": "UpgradeShop",
+            "style": {
+              "color": "indigo",
+              "size": "medium",
               "isFilled": false,
               "dash": "draw",
               "scale": 1,
@@ -1794,6 +2216,126 @@
             "point": [
               0.5,
               0.5
+            ],
+            "distance": 8
+          },
+          "c7d9413b-2e99-4c54-2416-1daf3fdb64cd": {
+            "id": "c7d9413b-2e99-4c54-2416-1daf3fdb64cd",
+            "type": "arrow",
+            "fromId": "29cdb94b-aaa2-4981-3dfe-bedfc9cc1b52",
+            "toId": "193872e5-c333-42a0-342c-e92d3dadadbe",
+            "handleId": "start",
+            "point": [
+              0.5,
+              0.5
+            ],
+            "distance": 8
+          },
+          "f440ee7a-21f2-4cff-00dd-184371ae2f83": {
+            "id": "f440ee7a-21f2-4cff-00dd-184371ae2f83",
+            "type": "arrow",
+            "fromId": "29cdb94b-aaa2-4981-3dfe-bedfc9cc1b52",
+            "toId": "54c00fe1-d975-46f6-1bf0-74099ad903bd",
+            "handleId": "end",
+            "point": [
+              0.52,
+              0.68
+            ],
+            "distance": 8
+          },
+          "7757bc51-935b-4022-0b4d-90cc3694176f": {
+            "id": "7757bc51-935b-4022-0b4d-90cc3694176f",
+            "type": "arrow",
+            "fromId": "000ef5d1-d076-458d-2f10-bd4e6c6abb9b",
+            "toId": "193872e5-c333-42a0-342c-e92d3dadadbe",
+            "handleId": "start",
+            "point": [
+              0.5,
+              0.5
+            ],
+            "distance": 8
+          },
+          "33e095d0-1a3b-45ab-1248-ab9d1c22c334": {
+            "id": "33e095d0-1a3b-45ab-1248-ab9d1c22c334",
+            "type": "arrow",
+            "fromId": "000ef5d1-d076-458d-2f10-bd4e6c6abb9b",
+            "toId": "7b1f15c4-1e66-4c76-11ad-1cdf595ada47",
+            "handleId": "end",
+            "point": [
+              0.35,
+              0.63
+            ],
+            "distance": 8
+          },
+          "21ba89e1-253c-4f6e-3987-341952bfb401": {
+            "id": "21ba89e1-253c-4f6e-3987-341952bfb401",
+            "type": "arrow",
+            "fromId": "923e562f-338b-4fd4-197e-e1c300bd2848",
+            "toId": "7b1f15c4-1e66-4c76-11ad-1cdf595ada47",
+            "handleId": "start",
+            "point": [
+              0.5,
+              0.5
+            ],
+            "distance": 8
+          },
+          "41234a2e-9d85-4c92-2caf-f441a2888430": {
+            "id": "41234a2e-9d85-4c92-2caf-f441a2888430",
+            "type": "arrow",
+            "fromId": "923e562f-338b-4fd4-197e-e1c300bd2848",
+            "toId": "90d983f2-9ddb-4452-3f28-10ad06503cb5",
+            "handleId": "end",
+            "point": [
+              0.52,
+              0.64
+            ],
+            "distance": 8
+          },
+          "3ba54613-ee15-4294-1622-501af81aca91": {
+            "id": "3ba54613-ee15-4294-1622-501af81aca91",
+            "type": "arrow",
+            "fromId": "30cab279-09bf-43b5-06ea-2b482145c51a",
+            "toId": "7b1f15c4-1e66-4c76-11ad-1cdf595ada47",
+            "handleId": "start",
+            "point": [
+              0.5,
+              0.5
+            ],
+            "distance": 8
+          },
+          "2b926100-7150-45b4-215e-46d21d565287": {
+            "id": "2b926100-7150-45b4-215e-46d21d565287",
+            "type": "arrow",
+            "fromId": "30cab279-09bf-43b5-06ea-2b482145c51a",
+            "toId": "5506798b-8566-4d3e-1fd7-55c9ff0159d1",
+            "handleId": "end",
+            "point": [
+              0.4,
+              0.63
+            ],
+            "distance": 8
+          },
+          "ed13001b-d8b4-458d-3400-6e6aa8a1b840": {
+            "id": "ed13001b-d8b4-458d-3400-6e6aa8a1b840",
+            "type": "arrow",
+            "fromId": "4ccb6fbf-a65d-4689-0992-4c5e0b5ad2ae",
+            "toId": "7b1f15c4-1e66-4c76-11ad-1cdf595ada47",
+            "handleId": "start",
+            "point": [
+              0.5,
+              0.5
+            ],
+            "distance": 8
+          },
+          "de35b3e2-021d-486f-1869-a15877c5dc7f": {
+            "id": "de35b3e2-021d-486f-1869-a15877c5dc7f",
+            "type": "arrow",
+            "fromId": "4ccb6fbf-a65d-4689-0992-4c5e0b5ad2ae",
+            "toId": "4e92b039-77c8-4dc0-33e8-2e49b9792049",
+            "handleId": "end",
+            "point": [
+              0.68,
+              0.48
             ],
             "distance": 8
           }

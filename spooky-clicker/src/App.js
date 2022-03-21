@@ -1,15 +1,15 @@
 import "./App.css";
 import Clicker from "./Components/Clicker";
+import Header from "./Components/Header";
 
 function App() {
-  let ghosts = 0;
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <Clicker ghosts={ghosts} />
-        <p>Boo</p>
-        <p>Ghosts: {ghosts}</p>
-      </header>
+      <Header />
+      <section className="Body">
+        <Clicker />      
+      </section>
     </div>
   );
 }

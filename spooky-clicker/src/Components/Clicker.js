@@ -1,12 +1,29 @@
-import logo from "../ghost.png";
-import React from "react";
+import React, { Component } from "react";
+import ghostButton from "../ghost.png";
 
-const Clicker = ({ ghosts }) => {
-  return (
-    <button className="ghost-button" onClick={ghosts + 1}>
-      <img src={logo} className="App-logo" alt="ghost clicker" />
-    </button>
-  );
-};
+export default class Clicker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { ghosts: 0 };
+  }
 
-export default Clicker;
+  handleGhostClick = () => {
+    this.setState(
+      (currState) => {
+        return { ghosts: currState.ghosts + 1 };
+      }
+    );
+  };
+
+  render() {
+    return (
+      <>
+        <button className="ghost-button" onClick={this.handleGhostClick}>
+          <img src={ghostButton} className="App-logo" alt="ghost clicker" />
+        </button>
+        <p>Boo!</p>
+        <p>Ghosts: {this.state.ghosts}</p>
+      </>
+    );
+  }
+}
