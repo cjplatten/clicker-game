@@ -4,7 +4,14 @@ import ghostButton from "../ghost.png";
 export default class Clicker extends Component {
   constructor(props) {
     super(props);
-    this.state = { ghosts: 0, spookyEnergy: 0, skeletons: 0, skeletonCost: 100, storedSkeletonEnergy: 0, skelemojis: " " };
+    this.state = {
+      ghosts: 100,
+      spookyEnergy: 1000,
+      skeletons: 0,
+      skeletonCost: 50,
+      storedSkeletonEnergy: 0,
+      skelemojis: " ",
+    };
   }
 
   handleGhostClick = () => {
@@ -13,11 +20,20 @@ export default class Clicker extends Component {
     });
   };
 
-  handleBuySkeleton = () => {
-    this.setState((currState) => {
-      return { skeletons: currState.skeletons + 1, skelemojis: currState.skelemojis + "☠️" }
-    })
-  }
+  handleSummonSkeleton = () => {
+    this.setState(
+      (currState) => {
+        return {
+          skeletons: currState.skeletons + 1,
+          skelemojis: currState.skelemojis + "☠️",
+          skeletonCost: Math.round(currState.skeletonCost * 1.2), spookyEnergy: currState.spookyEnergy - currState.skeletonCost
+        };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
 
   increaseSpookyEnergy = (increase) => {
     this.setState((currState) => {
@@ -27,7 +43,7 @@ export default class Clicker extends Component {
 
   passiveSpookyEnergy = () => {
     if (this.state.skeletons > 0) {
-        this.increaseSpookyEnergy( 0.2 * this.state.skeletons);
+      this.increaseSpookyEnergy(0.2 * this.state.skeletons);
     }
   };
 
@@ -45,7 +61,7 @@ export default class Clicker extends Component {
   }
 
   render() {
-    const { ghosts, skeletons, spookyEnergy, skelemojis} = this.state
+    const { ghosts, skeletons, skeletonCost, spookyEnergy, skelemojis } = this.state;
     return (
       <>
         <p>Boo!</p>
@@ -57,10 +73,19 @@ export default class Clicker extends Component {
         <section className="resources">
           <legend>spooky collections</legend>
           <p>Spooky Energy: {Math.round(spookyEnergy)}</p>
-          <p>Skeletons: {skeletons} 
-          <button className="buy-skeleton-button" onClick={this.handleBuySkeleton}>☠️ buy skeleton</button>
-            </p>
-            <p>skeletons increase spooky energy by {Math.round((0.2 * (skeletons + 1)) * 100) / 100} every second</p>
+          <p>
+            Skeletons: {skeletons}
+            <button
+              className="summon-skeleton-button"
+              onClick={this.handleSummonSkeleton} disabled={skeletonCost > spookyEnergy}
+            >
+              ☠️ summon skeleton (cost: {skeletonCost})
+            </button>
+          </p>
+          <p>
+            skeletons are increasing your spooky energy by{" "}
+            {Math.round(0.2 * skeletons * 100) / 100} every second
+          </p>
         </section>
       </>
     );
