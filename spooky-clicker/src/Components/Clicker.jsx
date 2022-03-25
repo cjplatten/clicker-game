@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-import ghostButton from "../ghost.png";
+import GhostRegion from "./GhostRegion";
+import Skeletons from "./Skeletons";
 
 export default class Clicker extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ghosts: 100,
-      spookyEnergy: 1000,
-      skeletons: 0,
-      skeletonCost: 50,
-      storedSkeletonEnergy: 0,
-      skelemojis: " ",
-    };
-  }
+  state = {
+    ghosts: 0,
+    spookyEnergy: 0,
+    skeletons: 0,
+    skeletonCost: 50,
+  };
 
-  handleGhostClick = () => {
+  increaseGhosts = (increase) => {
     this.setState((currState) => {
-      return { ghosts: currState.ghosts + 1 };
+      return { ghosts: currState.ghosts + increase };
     });
   };
 
@@ -25,8 +21,8 @@ export default class Clicker extends Component {
       (currState) => {
         return {
           skeletons: currState.skeletons + 1,
-          skelemojis: currState.skelemojis + "☠️",
-          skeletonCost: Math.round(currState.skeletonCost * 1.2), spookyEnergy: currState.spookyEnergy - currState.skeletonCost
+          skeletonCost: Math.round(currState.skeletonCost * 1.2),
+          spookyEnergy: currState.spookyEnergy - currState.skeletonCost,
         };
       },
       () => {
@@ -43,7 +39,7 @@ export default class Clicker extends Component {
 
   passiveSpookyEnergy = () => {
     if (this.state.skeletons > 0) {
-      this.increaseSpookyEnergy(0.2 * this.state.skeletons);
+      this.increaseSpookyEnergy(1 * this.state.skeletons);
     }
   };
 
@@ -51,43 +47,34 @@ export default class Clicker extends Component {
     this.interval = setInterval(() => this.passiveSpookyEnergy(), 1000);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.ghosts < this.state.ghosts) {
-      this.increaseSpookyEnergy(1);
-    }
-  }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
   render() {
-    const { ghosts, skeletons, skeletonCost, spookyEnergy, skelemojis } = this.state;
+    console.log("hi");
+    const { ghosts, skeletons, skeletonCost, spookyEnergy } = this.state;
     return (
-      <>
-        <p>Boo!</p>
-        <button className="ghost-button" onClick={this.handleGhostClick}>
-          <img src={ghostButton} className="App-logo" alt="ghost clicker" />
-        </button>
-        <p>Ghosts: {ghosts}</p>
-        <p>{skelemojis}</p>
+      <section className="Body">
+        <GhostRegion
+          ghosts={ghosts}
+          increaseGhosts={this.increaseGhosts}
+          increaseSpookyEnergy={this.increaseSpookyEnergy}
+        />
+        <p>{"☠️".repeat(skeletons)}</p>
         <section className="resources">
           <legend>spooky collections</legend>
+
           <p>Spooky Energy: {Math.round(spookyEnergy)}</p>
-          <p>
-            Skeletons: {skeletons}
-            <button
-              className="summon-skeleton-button"
-              onClick={this.handleSummonSkeleton} disabled={skeletonCost > spookyEnergy}
-            >
-              ☠️ summon skeleton (cost: {skeletonCost})
-            </button>
-          </p>
-          <p>
-            skeletons are increasing your spooky energy by{" "}
-            {Math.round(0.2 * skeletons * 100) / 100} every second
-          </p>
+          <Skeletons
+            skeletons={skeletons}
+            skeletonCost={skeletonCost}
+            spookyEnergy={spookyEnergy}
+            handleSummonSkeleton={this.handleSummonSkeleton}
+          />
         </section>
-      </>
+      </section>
     );
   }
 }
+
