@@ -2,53 +2,7 @@
   text-align: center;
   background-color: #3b414e;
 }
-.Body {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-logo {
-  height: 40vmin;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.ghost-button {
-  background-color: transparent;
-  border: transparent;
-  border-radius: 50%;
-}
-.ghost-button:hover {
-  background-color: rgb(165, 201, 223);
-  /* background-color: rgb(240, 196, 86); */
-}
-.ghost-button:active {
-  transform: translateY(3px);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.resources{
-  text-align: left;
-  align-self:flex-start;
-  background-color: #828da5;
-  border-radius: 10%;
-  padding: 1em;
-  margin-left: 1em;
-}
-
-.resources legend {
-text-decoration: underline;
-}
-
+/* ------- ------- */
 .App-header {
   background-color: #282c34;
   min-height: 20vh;
@@ -59,6 +13,125 @@ text-decoration: underline;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Body {
+  min-height: 80vh;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  grid-template-areas: "resources ghosts shop";
+  height: fit-content;
+}
+@media (max-width: 600px) {
+  .Body {
+    grid-template-areas:
+      "ghosts"
+      "resources"
+      "shop";
+      grid-template-columns: 1fr;
+  column-gap: 20px;
+  }
+  
+}
+.ghost-section {
+  width: fit-content;
+  height: fit-content;
+  grid-area: ghosts;
+  align-content: center;
+  display: grid;
+}
+.ghost-image {
+  height: 40vmin;
+  border-radius: 50%;
+}
+
+.ghost-button {
+  background-color: transparent;
+  border: transparent;
+  height: 40vmin;
+  width: 40vmin;
+  border-radius: 50%;
+  background-image: url(./ghost-start.png);
+  /* background-color: #cccccc; Used if the image is unavailable */
+  /* height: 500px; You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  color: transparent; /*hides button text but keeps button accessible for screen readers */
+}
+.ghost-button:hover {
+  background-color: rgb(165, 201, 223);
+  cursor: pointer;
+  /* background-color: rgb(240, 196, 86); */
+  /* transform:scale(20px) */
+}
+.ghost-button:active {
+  /* translate: 3px; */
+  /* transform: translateY(3px); */
+  background-image: url(./ghost-o.png);
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ghost-button-span {
+    animation: App-logo-spin infinite 20s linear;
+  }
+.ghost-button:hover {
+  transform: scale( 1.05, 1.05);
+}
+  .ghost-button:active {
+    transform: translateY(3px) ;
+  }
+}
+
+.skeletons-button {
+  cursor: pointer;
+}
+
+.resources {
+  text-align: left;
+  align-self: flex-start;
+  background-color: #828da5;
+  border-radius: 20px;
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  grid-area: resources;
+  width: 80%;
+  max-width: 80%;
+}
+
+.resources legend {
+  text-decoration: underline;
+}
+dt {
+  font-size: 1rem;
+}
+.description {
+  font-size: .8rem;
+  display: inline;
+}
+
+.resources-icons {
+  margin-top: .2rem;
+  /* display: inline-block;*/
+  font-size: .9rem; 
+  /* overflow: scroll; */
+}
+
+.shop{
+  grid-area: shop;
+}
+
+
+
+
+
 
 .App-link {
   color: #61dafb;
