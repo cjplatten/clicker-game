@@ -1,12 +1,12 @@
 import "./App.css";
-import Clicker from "./Components/Clicker";
+import ClickerGame from "./Components/ClickerGame";
 import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Clicker />
+      <ClickerGame />
     </div>
   );
 }
