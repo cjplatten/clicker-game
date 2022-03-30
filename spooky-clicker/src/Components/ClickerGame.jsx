@@ -4,11 +4,12 @@ import Resources from "./Resources";
 
 export default class ClickerGame extends Component {
   state = {
-    ghosts: 50,
-    spookyEnergy: 50,
+    ghosts: 0,
+    spookyEnergy: 0,
   };
 
   increaseGhosts = (increase) => {
+    this.changeSpookyEnergy(1);
     this.setState((currState) => {
       return { ghosts: currState.ghosts + increase };
     });

@@ -9,7 +9,6 @@ export default function GhostRegion(props) {
           className="ghost-button"
           onClick={() => {
             props.increaseGhosts(1);
-            props.changeSpookyEnergy(1);
           }}
           aria-labelledby="ghost clicker button"
         >

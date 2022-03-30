@@ -7,7 +7,7 @@ export default class Resources extends Component {
     skeletons: {
       name: "Skeletons",
       emoji: "💀",
-      amount: 10,
+      amount: 0,
       cost: 50,
       boost: 2,
       propertyBoosted: "spookyEnergy",
@@ -15,16 +15,16 @@ export default class Resources extends Component {
     grimReapers: {
       name: "Grim Reapers",
       emoji: "🕴",
-      amount: 1,
-      cost: 50,
+      amount: 0,
+      cost: 100,
       boost: 1,
       propertyBoosted: "ghosts",
     },
     gravestones: {
       name: "Gravestones",
       emoji: "🪦",
-      amount: 10,
-      cost: 50,
+      amount: 0,
+      cost: 200,
       boost: 2,
       propertyBoosted: "ghostWorth",
     },
@@ -38,7 +38,7 @@ export default class Resources extends Component {
     this.setState(
       (currState) => {
         return {
-          [summonName]: {...currState[summonName], amount: currState[summonName].amount + 1, cost: Math.round(currState[summonName].cost * 1.1)}
+          [summonName]: {...currState[summonName], amount: currState[summonName].amount + 1, cost: Math.round(currState[summonName].cost * 1.2)}
         };
       }
     );
@@ -62,7 +62,8 @@ export default class Resources extends Component {
   };
 
   componentDidMount() {
-    this.interval = setInterval(() => this.passiveSpookyEnergy(), 1000);
+    this.interval = setInterval(() => {this.passiveSpookyEnergy()
+    this.passiveGhosts()}, 1000);
   }
 
   // componentDidUpdate(prevProps, prevState) {
@@ -85,7 +86,7 @@ export default class Resources extends Component {
         <dl className="resources">
           <legend>spooky collections</legend>
 
-          <dt>Spooky Energy: {Math.round(spookyEnergy)}</dt>
+          <dt id="resources-spookyEnergy-dt" >Spooky Energy: {Math.round(spookyEnergy)}</dt>
           <ResourceItem {...skeletons} />
           <ResourceItem {...grimReapers} />
           <ResourceItem {...gravestones} />
