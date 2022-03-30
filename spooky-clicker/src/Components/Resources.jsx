@@ -1,33 +1,63 @@
 import React, { Component } from "react";
 import Shop from "./Shop";
-import Skeletons from "./Skeletons";
+import ResourceItem from "./ResourceItem";
 
 export default class Resources extends Component {
   state = {
-    skeletons: 0,
-    skeletonCost: 50, 
-    skeletonBoost: 2,
+    skeletons: {
+      name: "Skeletons",
+      emoji: "💀",
+      amount: 10,
+      cost: 50,
+      boost: 2,
+      propertyBoosted: "spookyEnergy",
+    },
+    grimReapers: {
+      name: "Grim Reapers",
+      emoji: "🕴",
+      amount: 1,
+      cost: 50,
+      boost: 1,
+      propertyBoosted: "ghosts",
+    },
+    gravestones: {
+      name: "Gravestones",
+      emoji: "🪦",
+      amount: 10,
+      cost: 50,
+      boost: 2,
+      propertyBoosted: "ghostWorth",
+    },
   };
 
-  handleSummonSkeleton = () => {
-    this.props.changeSpookyEnergy(-this.state.skeletonCost);
+  handleSummon = (summonName) => {
+    if(summonName){
+
+    this.props.changeSpookyEnergy(-this.state[summonName].cost);
+    console.log(summonName);
     this.setState(
       (currState) => {
         return {
-          skeletons: currState.skeletons + 1,
-          skeletonCost: Math.round(currState.skeletonCost *1.1),
+          [summonName]: {...currState[summonName], amount: currState[summonName].amount + 1, cost: Math.round(currState[summonName].cost * 1.1)}
         };
-      },
-      () => {
-        console.log(this.state);
       }
     );
-  };
-
+  }
+};
 
   passiveSpookyEnergy = () => {
-    if (this.state.skeletons > 0) {
-      this.props.changeSpookyEnergy(this.state.skeletonBoost * this.state.skeletons);
+    if (this.state.skeletons.amount > 0) {
+      this.props.changeSpookyEnergy(
+        this.state.skeletons.boost * this.state.skeletons.amount
+      );
+    }
+  };
+
+  passiveGhosts = () => {
+    if (this.state.grimReapers.amount > 0) {
+      this.props.increaseGhosts(
+        this.state.grimReapers.boost * this.state.grimReapers.amount
+      );
     }
   };
 
@@ -35,19 +65,20 @@ export default class Resources extends Component {
     this.interval = setInterval(() => this.passiveSpookyEnergy(), 1000);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.ghosts < this.state.ghosts) {
-      this.props.changeSpookyEnergy(1);
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.ghosts < this.state.ghosts) {
+  //     this.props.changeSpookyEnergy(1);
+  //   }
+  // }
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
   render() {
-    const { skeletons, skeletonCost, skeletonBoost } = this.state;
+    const { skeletons, grimReapers, gravestones } = this.state;
     const { spookyEnergy } = this.props;
+    console.log(spookyEnergy);
 
     return (
       <>
@@ -55,12 +86,16 @@ export default class Resources extends Component {
           <legend>spooky collections</legend>
 
           <dt>Spooky Energy: {Math.round(spookyEnergy)}</dt>
-          <Skeletons skeletons={skeletons} skeletonBoost={skeletonBoost} />
+          <ResourceItem {...skeletons} />
+          <ResourceItem {...grimReapers} />
+          <ResourceItem {...gravestones} />
         </dl>
         <Shop
-          skeletonCost={skeletonCost}
           spookyEnergy={spookyEnergy}
-          handleSummonSkeleton={this.handleSummonSkeleton}
+          skeletonCost={skeletons.cost}
+          grimReaperCost={grimReapers.cost}
+          gravestoneCost={gravestones.cost}
+          handleSummon={this.handleSummon}
         />
       </>
     );

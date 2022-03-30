@@ -15,15 +15,15 @@ export default class ClickerGame extends Component {
   };
 
   changeSpookyEnergy = (increase) => {
-    console.log(increase)
+    console.log(increase);
     this.setState((currState) => {
       return { spookyEnergy: currState.spookyEnergy + increase };
     });
   };
 
   render() {
-    console.log("hi");
     const { ghosts, spookyEnergy } = this.state;
+
     return (
       <section className="Body">
         <GhostRegion
@@ -31,7 +31,12 @@ export default class ClickerGame extends Component {
           increaseGhosts={this.increaseGhosts}
           changeSpookyEnergy={this.changeSpookyEnergy}
         />
-        <Resources ghosts={ghosts} increaseGhosts={this.increaseGhosts} spookyEnergy={spookyEnergy} changeSpookyEnergy={this.changeSpookyEnergy}/>
+        <Resources
+          ghosts={ghosts}
+          increaseGhosts={this.increaseGhosts}
+          spookyEnergy={spookyEnergy}
+          changeSpookyEnergy={this.changeSpookyEnergy}
+        />
       </section>
     );
   }
