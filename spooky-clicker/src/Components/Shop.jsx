@@ -9,25 +9,26 @@ export default function Shop(props) {
       <legend>spooky sundries</legend>
       <button
         className="spooky-shop-button-skeleton"
-        onClick={()=>props.handleSummon('skeletons')}
+        onClick={() => props.handleSummon("skeletons")}
         disabled={skeletonCost > spookyEnergy}
       >
-        ☠️ summon skeleton (cost: {skeletonCost})
+        💀 summon skeleton (cost: {skeletonCost}) 💀
       </button>
       <button
         className="spooky-shop-button-grimReapers"
-        onClick={()=>props.handleSummon('grimReapers')}
+        onClick={() => props.handleSummon("grimReapers")}
         disabled={grimReaperCost > spookyEnergy}
       >
-        🕴 summon grim reaper (cost: {grimReaperCost})
+        🕴 summon grim reaper (cost: {grimReaperCost}) 🕴
       </button>
       <button
         className="spooky-shop-button-gravestones"
-        onClick={()=>props.handleSummon('gravestones')}
+        onClick={() => props.handleSummon("gravestones")}
         disabled={gravestoneCost > spookyEnergy}
       >
-        🪦 summon gravestones (cost: {gravestoneCost})
+        🪦 summon gravestones (cost: {gravestoneCost}) 🪦
       </button>
+      <p className="description">(summons cost spooky energy)</p>
     </section>
   );
 }

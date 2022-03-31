@@ -23,7 +23,7 @@ export default function ResourceItem(props) {
              {propertyBoosted === "ghostWorth" && (
             <>
             <br />
-            {name} are making your ghosts worth {Math.round(boost * amount * 100) / 100} spooky energy per ghost
+            {name} are making each ghost worth {Math.round(boost * amount * 100) / 100} extra spooky energy
             </>
             )}
             </p>

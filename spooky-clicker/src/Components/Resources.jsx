@@ -24,26 +24,33 @@ export default class Resources extends Component {
       name: "Gravestones",
       emoji: "🪦",
       amount: 0,
-      cost: 200,
+      cost: 150,
       boost: 2,
       propertyBoosted: "ghostWorth",
     },
   };
 
   handleSummon = (summonName) => {
-    if(summonName){
-
-    this.props.changeSpookyEnergy(-this.state[summonName].cost);
-    console.log(summonName);
-    this.setState(
-      (currState) => {
+    if (summonName) {
+      this.props.changeSpookyEnergy(-this.state[summonName].cost);
+      console.log(summonName);
+      this.setState((currState) => {
         return {
-          [summonName]: {...currState[summonName], amount: currState[summonName].amount + 1, cost: Math.round(currState[summonName].cost * 1.2)}
+          [summonName]: {
+            ...currState[summonName],
+            amount: currState[summonName].amount + 1,
+            cost: Math.round(currState[summonName].cost * 1.2),
+          },
         };
+      });
+      if (this.state[summonName].propertyBoosted === "ghostWorth") {
+        console.log("hi");
+        this.props.changeGhostSpookyEnergyValue(
+          this.state[summonName].boost * (this.state[summonName].amount + 1)
+        );
       }
-    );
-  }
-};
+    }
+  };
 
   passiveSpookyEnergy = () => {
     if (this.state.skeletons.amount > 0) {
@@ -62,8 +69,10 @@ export default class Resources extends Component {
   };
 
   componentDidMount() {
-    this.interval = setInterval(() => {this.passiveSpookyEnergy()
-    this.passiveGhosts()}, 1000);
+    this.interval = setInterval(() => {
+      this.passiveSpookyEnergy();
+      this.passiveGhosts();
+    }, 1000);
   }
 
   // componentDidUpdate(prevProps, prevState) {
@@ -86,7 +95,9 @@ export default class Resources extends Component {
         <dl className="resources">
           <legend>spooky collections</legend>
 
-          <dt id="resources-spookyEnergy-dt" >Spooky Energy: {Math.round(spookyEnergy)}</dt>
+          <dt id="resources-spookyEnergy-dt">
+            Spooky Energy: {Math.round(spookyEnergy)}
+          </dt>
           <ResourceItem {...skeletons} />
           <ResourceItem {...grimReapers} />
           <ResourceItem {...gravestones} />
